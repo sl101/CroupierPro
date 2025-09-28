@@ -74,6 +74,11 @@ const handleAnswer = () => {
 </script>
 
 <style scoped>
+.table-buttons{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
 .training-screen{
 	display: flex;
 	flex-direction: column;
