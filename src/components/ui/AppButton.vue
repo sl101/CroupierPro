@@ -1,10 +1,11 @@
 <script setup lang="ts">
 
+
 </script>
 
 
-<template>
+<template >
 
-	<h1>Count</h1>
+	<button>Count</button>
   
 </template>

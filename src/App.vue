@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import Count from './views/Count.vue'
+import MultiplicationView from './views/MultiplicationView.vue'
 import Roulet from './views/Roulet.vue'
 import NotFound from './views/NotFound.vue'
 
 const routes = {
   //'/': Home,
-	'/count': Count,
+	'/count': MultiplicationView,
   '/roulet': Roulet
 }
 
@@ -22,7 +22,6 @@ const currentView = computed(() => {
 </script>
 
 <template>
-	<h1>Hello world!!!</h1>
   <a href="#/count">Count</a> |
   <a href="#/roulet">Roulet</a>
   <component :is="currentView" />
