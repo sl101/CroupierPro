@@ -1,7 +1,7 @@
 <template>
   <div class="multiplication-view">
     <div v-if="!store.isTrainingActive" class="mode-selection">
-      <h2>Выберите таблицу умножения</h2>
+      <h2>Select the multiplication table</h2>
       <div class="table-buttons">
         <AppButton
           v-for="(value, key) in MULTIPLICATION_TABLES"
@@ -15,8 +15,8 @@
 
     <div v-else class="training-screen">
       <!--<div class="stats">-->
-        <!--<span>Счет: {{ store.score }}/{{ store.questionsAsked }}</span>
-        <span>Точность: {{ Math.round(store.accuracy) }}%</span>-->
+        <!--<span>Count: {{ store.score }}/{{ store.questionsAsked }}</span>
+        <span>Accuracy: {{ Math.round(store.accuracy) }}%</span>-->
       <!--</div>-->
 
       <div class="question" v-if="store.currentQuestion">
@@ -28,26 +28,26 @@
           type="number"
           :disabled="store.isAnswered"
           @keyup.enter="handleAnswer"
-          placeholder="Введите ответ"
+          placeholder="Enter the answer"
         />
 
         <div v-if="store.isAnswered" class="result">
-          <p v-if="isCorrect" class="correct">Правильно! ✅</p>
+          <p v-if="isCorrect" class="correct">Right! ✅</p>
           <p v-else class="incorrect">
-            Неправильно. Правильный ответ: {{ store.currentQuestion.correctAnswer }}
+            Incorrect. Correct answer: {{ store.currentQuestion.correctAnswer }}
           </p>
           
           <AppButton @click="store.generateNewQuestion()">
-            Следующий вопрос
+            Next question
           </AppButton>
         </div>
         <AppButton v-else @click="handleAnswer">
-          Проверить
+          Check
         </AppButton>
       </div>
 
       <AppButton @click="store.resetTraining()" variant="outline">
-        Завершить тренировку
+        Finish the workout
       </AppButton>
     </div>
   </div>
