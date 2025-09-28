@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import MultiplicationView from './views/MultiplicationView.vue'
+import Home from './views/Home.vue'
 import Roulet from './views/Roulet.vue'
 import NotFound from './views/NotFound.vue'
 
 const routes = {
-  //'/': Home,
+  '/': Home,
 	'/count': MultiplicationView,
   '/roulet': Roulet
 }
@@ -17,7 +18,8 @@ window.addEventListener('hashchange', () => {
 })
 
 const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || NotFound
+  const path = currentPath.value.slice(1) || '/'
+  return (routes as any)[path] || NotFound
 })
 </script>
 
