@@ -4,6 +4,7 @@ import MultiplicationView from './views/MultiplicationView.vue'
 import Home from './views/Home.vue'
 import Roulet from './views/Roulet.vue'
 import NotFound from './views/NotFound.vue'
+import './styles/style.css'
 
 const routes = {
   '/': Home,
@@ -24,9 +25,31 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <a href="#/count">Count</a> |
-  <a href="#/roulet">Roulet</a>
-  <component :is="currentView" />
+	<div class="app">
+		<div class="container">
+			<div class="wrapper">
+
+				<div>
+					<a href="#/count">Count</a> |
+					<a href="#/roulet">Roulet</a>
+				</div>
+				<component :is="currentView" />
+			</div>
+		</div>
+	</div>
 </template>	
 
-<style scoped></style>
+<style scoped>
+	.app{
+		width: 100%;
+		height: 100%;
+	}
+	.wrapper{
+		width: 100%;
+		height: 100%;
+		padding: 40px 0;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+</style>
