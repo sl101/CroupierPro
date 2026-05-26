@@ -5,6 +5,6 @@
 
 <template>
 
-	<h1>Roulet</h1>
+	<h1>ResultsView</h1>
   
 </template>

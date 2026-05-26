@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import MultiplicationView from './views/MultiplicationView.vue'
-import Home from './views/Home.vue'
-import Roulet from './views/Roulet.vue'
+import Home from './views/HomeView.vue'
+import Roulet from './views/RouletteNeighborsView.vue'
 import NotFound from './views/NotFound.vue'
 import './styles/style.css'
 

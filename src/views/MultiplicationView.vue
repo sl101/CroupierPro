@@ -38,7 +38,7 @@
             Incorrect. Correct answer: {{ store.currentQuestion.correctAnswer }}
           </p>
           
-          <AppButton  @click="nextQuestion">
+          <AppButton  @click="nextQuestion" class="next-question">
             Next question
           </AppButton>
         </div>
@@ -149,5 +149,11 @@ watch(() => store.isTrainingActive, (newVal) => {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+}
+
+.next-question{
+	display: block;
+	margin-top: 20px;
+
 }
 </style>
